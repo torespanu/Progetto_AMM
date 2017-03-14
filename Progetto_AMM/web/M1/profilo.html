@@ -1,16 +1,54 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>profilo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Salvatore Spanu">
+        <meta name="keywords" content="profilo, nerdbook, informatica, social network, incontri, chat, community">
     </head>
+    
     <body>
-        <div>TODO write content</div>
+        <header>
+            <div id="title">
+                <h1>Nerdbook - Profilo</h1>
+            </div>
+        </header>
+        
+        <nav>
+            <p>Dove vuoi andare?</p>
+            <a href="descrizione.html">Descrizione</a><br />
+            <a href="login.html">Login</a><br />
+        </nav>
+        
+        <div id="formProfilo">
+            <form action="#" method="get">
+
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" value="inserisci il nome"/><br />
+
+                <label for="cognome">Cognome</label>
+                <input type="text" name="cognome" id="cognome" value="inserisci il cognome"/><br />
+
+                <label for="immagine">Immagine</label>
+                <input type="url" name="immagine" id="immagine" value="http://"/><br />
+
+                <label for="frasePresentazione">Frase di presentazione</label><br />
+                <textarea rows="3" cols="30" name="frasePresentazione" id="frasePresentazione"></textarea><br />
+
+                <label for="dataNascita">Data di nascita</label>
+                <input name="dataNascuta" id="dataNascita" type="date"/><br />
+
+                <label for="pswd">Password</label>
+                <input type="password" name="pswd" id="pswd"/><br />
+
+                <label for="cpswd">Conferma Password</label>
+                <input type="password" name="cpswd" id="cpswd"/><br />
+
+                <button type="submit">Invia dati</button>
+                
+            </form>
+        </div>
+        
     </body>
 </html>
