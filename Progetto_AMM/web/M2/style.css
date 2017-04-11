@@ -5,28 +5,30 @@
 
 body{
     background-color: #00E7FF;
-    font: 17px/25px "Open Sans", Arial, sans-serif;
+    font: 18px/25px "Open Sans", Arial, sans-serif;
 }
 
 h1{
     color: #444444;
-    font: 25px/40px "Open Sans", Arial, sans-serif;
+    font: 25px/20px "Open Sans", Arial, sans-serif;
     font-weight: bold;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 h2{
-    font: 20px/30px "Open Sans", Arial, sans-serif;
+    font: 20px/20px "Open Sans", Arial, sans-serif;
     color: #444444;
     margin: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 h3{
     color: #444444;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 a:link{
@@ -48,23 +50,19 @@ div{
     background-color: #ffffff;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 10px 10px;
     box-shadow: 0 0 10px rgba(0,0,0,2);
 }
 
-#listaAmici{
+.liste{
     list-style-type: none;
+    padding-left: 0;
 }
 
-#listaAmici img{
-    max-width: 40px;
+.liste img{
+    max-width: 60px;
     margin-right: 10px;
     padding-top: 10px;
 }
@@ -76,6 +74,200 @@ nav a:link{
     padding-right: 20px;
 }
 
-#nuovoPost{
 
+#campi *:focus{
+   outline: none;
+   border-color: black;
+   box-shadow: 0 0 5px black;
+}
+
+#campi textArea{
+    height: 60px;
+    width: 182px;
+    padding: 2px;
+}
+
+#campi input{
+    width: 180px;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+form button{
+    margin-top: 10px;
+    width: 188px;
+}
+
+header{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 8px;
+    width: 180px;
+    height: 30px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 180px;
+    width: 85%;
+    height: 30px;
+    font-size: 25px;
+}
+nav div, header div{
+    height: 100%;
+    list-style-type: none;
+}
+
+nav ul, nav li{
+    margin-top: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#page{
+    position: relative;
+    background: rgba(0,0,0,0);
+    top: 60px;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+#sidebar{
+    top: 55px;
+    left: 0;
+    float: left;
+    width: 25%;
+    padding-left: 40px;
+}
+
+#bacheca, #cont, #campi{
+    float: left;
+    width: 60%;
+}
+
+.campiForm img{
+    float: left;
+    margin-left: 10px;
+    max-width: 150px;
+    margin-right: 10px;
+    padding-top: 0px;
+}
+
+.campiForm img{
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 10px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,2);
+}
+
+.campiForm form{
+    padding-left: 180px;
+}
+
+#campiLogin{
+    margin-left: 170px;
+}
+
+#campi.formLogin{
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+#listaGruppi li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (min-width: 1024px){
+    
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 481px){
+    
+    header{
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        position: fixed;
+        top: 0;
+        left: 8px;
+        width: 100%;
+        height: 30px;
+    }
+    
+    #sidebar{
+        margin-top: 105px;
+        left: 0;
+        float: none;
+        width: 15%;
+        padding-left: 20px;
+    
+    }
+    #bacheca, #cont, #campi{
+        float: left;
+        width: auto;
+    }
+    
+    nav{
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    #sidebar{
+        top: 55px;
+        left: 0;
+        float: none;
+        width: 200px;
+        padding-left: 40px;
+    }
+
+    #bacheca, #cont, #campi{
+        float: left;
+        width: 300px;
+    }
+}
+
+/* Con queste regole si inseriscono tramite css le immagini che non portano 
+informazione ma solo abbellimento estetico. Le immagini dei profili e degli allegati
+portano informazione mentre per esempio l'icona di login e quelle prima dei gruppi
+nel sidebar non sono indispensaabili e benchè diano maggiore chiarezza all'informazione
+che segue sono solo estetiche.*/
+
+#loginForm{
+    background-image: url('img/chiave.jpg');
+    background-size: 100px;
+    background-position: 40px;
+    background-repeat: no-repeat;
+    width: 758px;
+}
+
+#mongol{
+    background-image: url('img/mongolfiera.jpg');
+    background-size: 20px;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+#ritard{
+    background-image: url('img/sveglia.jpg');
+    background-size: 20px;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
 }

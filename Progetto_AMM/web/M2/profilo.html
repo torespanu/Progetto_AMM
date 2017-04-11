@@ -11,48 +11,73 @@
     </head>
     
     <body>
-        
-        <header>
-            <div id="title">
-                <h1>Nerdbook - Profilo</h1>
+        <div id="page">
+            <header>
+                <div id="title">
+                    Nerdbook
+                </div>
+            </header>
+
+            <nav>
+                <div>
+                    <ul>
+                        <li><a href="descrizione.html">Descrizione</a></li>
+                        <li><a href="profilo.html">Profilo</a></li>
+                        <li><a href="bacheca.html">Bacheca</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div id="sidebar">
+
+                <h3>Amici</h3>
+                <ul id="listaAmici" class="liste">
+                    <li><img title="Bill" alt="Foto Bill Gates" src="img/bill_gates.jpg"/>Bill</li>
+                    <li><img title="Steve" alt="Foto Steve Jobs" src="img/steve_jobs.jpg"/>Steve</li>
+                    <li><img title="Linus" alt="Foto Linis Trovalds" src="img/linus.jpg"/>Linus</li>
+                </ul>
+                <h3>Gruppi</h3>
+                <ul id="listaGruppi" class="liste">
+                    <li id="mongol">Mongolfieristi</li>
+                    <li id="ritard">Ritardatari</li>
+                </ul>
             </div>
-        </header>
-        
-        <nav>
-            <a href="descrizione.html">Descrizione</a><br />
-            <a href="login.html">Login</a><br />
-        </nav>
-        
-        <div id="formProfilo">
-            <form action="#" method="post">
 
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" value="inserisci il nome"/><br />
 
-                <label for="cognome">Cognome</label>
-                <input type="text" name="cognome" id="cognome" value="inserisci il cognome"/><br />
-
-                <label for="immagine">Immagine</label>
-                <input type="url" name="immagine" id="immagine" value="http://prova.it"/><br />
-
-                <label for="frasePresentazione">Frase di presentazione</label><br />
-                <textarea rows="3" cols="30" name="frasePresentazione" id="frasePresentazione"></textarea><br />
-
-                <label for="dataNascita">Data di nascita</label>
-                <input name="dataNascuta" id="dataNascita" type="date"/><br />
-
-                <label for="pswd">Password</label>
-                <input type="password" name="pswd" id="pswd"/><br />
-
-                <label for="cpswd">Conferma Password</label>
-                <input type="password" name="cpswd" id="cpswd"/><br />
-
-                <button type="submit">Invia dati</button>
+            <div id="campi">
                 
-            </form>
-            
+                <div class="campiForm">
+                        <img title="Linus" alt="Foto Linis Trovalds" src="img/linus.jpg"/>
+                        <form action="#" method="post">
+                        <div>
+                            <label for="nome">Nome</label><br />
+                            <input type="text" name="nome" id="nome" value="Linus"/><br />
+
+                            <label for="cognome">Cognome</label><br />
+                            <input type="text" name="cognome" id="cognome" value="Trovalds"/><br />
+
+                            <label for="immagine">Immagine</label><br />
+                            <input type="url" name="immagine" id="immagine" value="http://prova.it"/><br />
+
+                            <label for="frasePresentazione">Frase di presentazione</label><br />
+                            <textarea name="frasePresentazione" id="frasePresentazione"></textarea><br />
+
+                            <label for="dataNascita">Data di nascita</label><br />
+                            <input name="dataNascuta" id="dataNascita" type="date"/><br />
+
+                            <label for="pswd">Password</label><br />
+                            <input type="password" name="pswd" id="pswd"/><br />
+
+                            <label for="cpswd">Conferma Password</label><br />
+                            <input type="password" name="cpswd" id="cpswd"/><br />
+
+                            <button type="submit">Invia dati</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        
     </body>
     
 </html>

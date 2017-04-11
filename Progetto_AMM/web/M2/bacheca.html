@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-    
     <head>
         <title>bacheca</title>
         <meta charset="UTF-8">
@@ -12,78 +11,89 @@
     </head>
     
     <body>
-        
-        <header>
-            <div id="title">
-                <h1>Nerdbook - Bacheca personale</h1>
-            </div>
-        </header>
-        
-        <div>
+        <div id="page">
+            <header>
+                <div id="title">
+                    Nerdbook
+                </div>
+            </header>
+
             <nav>
-                <a href="descrizione.html">Descrizione</a>
-                <a href="login.html">Login</a>
+                <div>
+                    <ul>
+                        <li><a href="descrizione.html">Descrizione</a></li>
+                        <li><a href="profilo.html">Profilo</a></li>
+                        <li><a href="bacheca.html">Bacheca</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
             </nav>
-        </div>
-        
-        <div id="sidebar">
-            <form id="input-form" action="#" method="get">
-                <label for="search">Search</label>
-                <input name="search" id="search" type="text" value="Ricerca"/>   
-                <button type="submit">Invia</button>
-            </form>
-            <h2>Persone</h2>
-            <ul id="listaAmici">
-                <li><img title="fotoProfilo1" alt="Foto Bill Gates" src="img/bill_gates.jpg"/>Bill</li>
-                <li><img title="fotoProfilo2" alt="Foto Steve Jobs" src="img/steve_jobs.jpg"/>Steve</li>
-                <li><img title="fotoProfilo3" alt="Foto Sheldon Cooper" src="img/sheldon_cooper.jpg"/>Sheldon</li>
-            </ul>
-        </div>
-        
-        <div id="bacheca">
-            <div id="nuovoPost">
-                <form action="#" method="post">
-                    <label for="testo">Testo nuovo post</label>
-                    <input type="text" name="testo" id="testo" value="Testo nuovo post"/><br />
+            
 
-                    <label for="allegato">allegato</label>
-                    <input type="url" name="allegato" id="allegato" value="http://prova.it"/><br />
-                    <label for="Immagine">Immagine</label>
-                    <input type="radio" name="allegato" id="immagine" value="immagine">
-                    <label for="link">Link</label>
-                    <input type="radio" name="allegato" id="link" value="link"><br />
-                    <button type="submit">Invia dati</button>
+            <div id="sidebar">
+                <!--<form id="input-form" action="#" method="get">
+                    <label for="search">Search</label>
+                    <input name="search" id="search" type="text" value="Ricerca"/>   
+                    <button type="submit">Invia</button>
+                </form>-->
+                <h3>Amici</h3>
+                <ul id="listaAmici" class="liste">
+                    <li><img title="Bill" alt="Foto Bill Gates" src="img/bill_gates.jpg"/>Bill</li>
+                    <li><img title="Steve" alt="Foto Steve Jobs" src="img/steve_jobs.jpg"/>Steve</li>
+                    <li><img title="Linus" alt="Foto Linus Trovalds" src="img/linus.jpg"/>Linus</li>
+                </ul>
+                <h3>Gruppi</h3>
+                <ul id="listaGruppi" class="liste">
+                    <li id="mongol">Mongolfieristi</li>
+                    <li id="ritard">Ritardatari</li>
+                </ul>
+            </div>
 
-                </form>
-            </div>
-            <h2>Posts:</h2>
-            <div id="post1">
-                <img title="fotoProfilo1" alt="Foto Bill Gates" src="img/bill_gates.jpg" width="100"/>
-                <p id="nick1">Utente: Bill</p>
-                
-                <div id="messaggio1">
-                    <p>Messaggio: Ciao, questo è un primo messaggio lasciato in bacheca</p>
+            <div id="bacheca">
+                <!--<div id="nuovoPost">
+                    <form action="#" method="post">
+                        <label for="testo">Testo nuovo post</label>
+                        <textarea name="testo" id="testo">Testo nuovo post</textarea><br />
+
+                        <label for="allegato">allegato</label>
+                        <input type="url" name="allegato" id="allegato" value="http://prova.it"/><br />
+                        <label for="immagine">Immagine</label>
+                        <input type="radio" name="allegato" id="immagine" value="immagine">
+                        <label for="link">Link</label>
+                        <input type="radio" name="allegato" id="link" value="link"><br />
+                        <button type="submit">Invia dati</button>
+
+                    </form>
+                </div>-->
+                <h2>Posts:</h2>
+                <div id="post1">
+                    <img title="Bill" alt="Foto Bill Gates" src="img/bill_gates.jpg" width="100"/>
+                    <p id="nick1">Bill</p>
+
+                    <div id="messaggio1">
+                        <p>Messaggio: Ciao, questo è un primo messaggio lasciato in bacheca</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div id="post2">
-                <img title="fotoProfilo2" alt="Foto Steve Jobs" src="img/steve_jobs.jpg" width="150"/>
-                <p id="nick2">Utente: Steve Jobs</p>
-                <div id="messaggio2">
-                    <p>Messaggio: Ciao, questo è un secondo messaggio lasciato in bacheca</p>
+
+                <div id="post2">
+                    <img title="Steve" alt="Foto Steve Jobs" src="img/steve_jobs.jpg" width="150"/>
+                    <p id="nick2">Linis</p>
+                    <div id="messaggio2">
+                        <p>Messaggio: Ciao, questo è un secondo messaggio lasciato in bacheca</p>
+                    </div>
+                    <p id="allegato2"><img title="fotoAllegato1" alt="schermata blu" src="img/blu-screen.jpg" width="200"/></p>
                 </div>
-                <p id="allegato2"><img title="fotoAllegato1" alt="Foto Aborigeno" src="img/photo1.jpg" width="200"/></p>
-            </div>
-            
-            <div id="post3">
-                <img title="fotoProfilo3" alt="Foto Sheldon Cooper" src="img/sheldon_cooper.jpg" width="150"/>
-                <p id="nick3">Utente: Sheldon</p>
-                <div id="messaggio3">
-                    <p>Messaggio: Ciao, questo è un terzo messaggio lasciato in bacheca</p>
-                </div>  
-                <p id="allegato3"><a href="http://www.ubuntu.com">Io sono ciò che sono in virtù di ciò che siamo tutti</a></p>
-            </div>
-            
-        </div>    
+
+                <div id="post3">
+                    <img title="Linus" alt="Foto Linus Trovalds" src="img/linus.jpg" width="150"/>
+                    <p id="nick3">Linus</p>
+                    <div id="messaggio3">
+                        <p>Messaggio: Ciao, questo è un terzo messaggio lasciato in bacheca</p>
+                    </div>  
+                    <p id="allegato3"><a href="http://www.ubuntu.com">Io sono ciò che sono in virtù di ciò che siamo tutti</a></p>
+                </div>
+
+            </div>  
+        </div>
     </body>
 </html>
