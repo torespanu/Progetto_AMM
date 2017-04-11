@@ -171,6 +171,10 @@ nav ul, nav li{
     padding-left: 180px;
 }
 
+.campiForm div{
+    min-width: 186px;
+}
+
 #campiLogin{
     margin-left: 170px;
 }
@@ -194,52 +198,77 @@ nav ul, nav li{
 @media only screen and (max-width: 1023px) and (min-width: 481px){
     
     header{
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-        position: fixed;
-        top: 0;
-        left: 8px;
         width: 100%;
-        height: 30px;
-    }
-    
-    #sidebar{
-        margin-top: 105px;
-        left: 0;
-        float: none;
-        width: 15%;
-        padding-left: 20px;
-    
-    }
-    #bacheca, #cont, #campi{
-        float: left;
-        width: auto;
+        z-index: 1;
     }
     
     nav{
+        z-index: 1;
         position: fixed;
         top: 65px;
-        left: 0;
+        left: 8px;
         width: 100%;
         height: 60px;
-        font-size: 25px;
     }
+    
+    #sidebar{
+        margin-top: 102px;
+        left: 8px;
+        float: left;
+        width: 15%;
+        min-width: 150px; 
+        padding-left: 20px;
+    
+    }
+    
+    #bacheca, #cont, #campi{
+        z-index: 0;
+        position: relative;
+        top: 92px;
+        margin-left: 5px;
+    }
+    
+    .formLogin{
+        margin-top: 102px;
+        left: 8px;
+    }
+
 }
 
 @media only screen and (max-width: 480px){
+    
+    header{
+        width: 100%;
+        z-index: 1;
+    }
+    
     #sidebar{
-        top: 55px;
-        left: 0;
-        float: none;
-        width: 200px;
-        padding-left: 40px;
+        display: none;
     }
-
+    
+    nav{
+        z-index: 1;
+        position: relative;
+        margin-left: 8px;
+        top: 4px;
+        left: 0px;
+        width: 100%;
+        height: 120px;
+    }
+    
+    nav ul, nav li{
+        display: block;
+        
+    }
+    
     #bacheca, #cont, #campi{
-        float: left;
-        width: 300px;
+        z-index: 0;
+        position: relative;
+        top: 28px;
+        margin-left: 10px;
+        width: 93%;
     }
+    
 }
 
 /* Con queste regole si inseriscono tramite css le immagini che non portano 
