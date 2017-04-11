@@ -147,7 +147,7 @@ nav ul, nav li{
 }
 
 #bacheca, #cont, #campi{
-    float: left;
+    float:left;
     width: 60%;
 }
 
@@ -191,8 +191,8 @@ nav ul, nav li{
     padding-bottom: 10px;
 }
 
-@media only screen and (min-width: 1024px){
-    
+#loginForm div{
+    min-width: 185px;
 }
 
 @media only screen and (max-width: 1023px) and (min-width: 481px){
@@ -216,7 +216,7 @@ nav ul, nav li{
         left: 8px;
         float: left;
         width: 15%;
-        min-width: 150px; 
+        min-width: 118px; 
         padding-left: 20px;
     
     }
@@ -224,6 +224,7 @@ nav ul, nav li{
     #bacheca, #cont, #campi{
         z-index: 0;
         position: relative;
+        width: 53%;
         top: 92px;
         margin-left: 5px;
     }
@@ -232,7 +233,26 @@ nav ul, nav li{
         margin-top: 102px;
         left: 8px;
     }
-
+    
+    #listaGruppi li{
+        padding-left: 0;
+        background-image: none;
+    }
+    
+    .campiForm form{
+        padding-left: 0;
+        padding-top: 220px;
+    }
+    #campiLogin{
+        margin-left: 8px;
+        margin-top: 160px;
+    }
+    
+    nav a:link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
 }
 
 @media only screen and (max-width: 480px){
@@ -247,7 +267,7 @@ nav ul, nav li{
     }
     
     nav{
-        z-index: 1;
+        z-index: 0;
         position: relative;
         margin-left: 8px;
         top: 4px;
@@ -269,6 +289,22 @@ nav ul, nav li{
         width: 93%;
     }
     
+    #campiLogin{
+        margin-left: 8px;
+    }
+    
+    .campiForm img{
+        max-width: 150px;
+        margin-right: auto;
+        padding-top: 0px;
+    }
+    
+    .campiForm form{
+        padding-left: 0px;
+        padding-top: 220px;
+    }
+
+    
 }
 
 /* Con queste regole si inseriscono tramite css le immagini che non portano 
@@ -280,9 +316,8 @@ che segue sono solo estetiche.*/
 #loginForm{
     background-image: url('img/chiave.jpg');
     background-size: 100px;
-    background-position: 40px;
+    background-position: left 25px top 25px;
     background-repeat: no-repeat;
-    width: 758px;
 }
 
 #mongol{
