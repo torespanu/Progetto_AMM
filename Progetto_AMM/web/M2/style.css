@@ -74,7 +74,6 @@ nav a:link{
     padding-right: 20px;
 }
 
-
 #campi *:focus{
    outline: none;
    border-color: black;
@@ -183,7 +182,6 @@ nav ul, nav li{
     float: none;
     margin-right: auto;
     margin-left: auto;
-    
 }
 
 #listaGruppi li{
@@ -218,7 +216,6 @@ nav ul, nav li{
         width: 15%;
         min-width: 118px; 
         padding-left: 20px;
-    
     }
     
     #bacheca, #cont, #campi{
@@ -278,7 +275,6 @@ nav ul, nav li{
     
     nav ul, nav li{
         display: block;
-        
     }
     
     #bacheca, #cont, #campi{
