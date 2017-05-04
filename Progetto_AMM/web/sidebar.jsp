@@ -1,7 +1,7 @@
 <%-- 
     Document   : sidebar
     Created on : 1-mag-2017, 17.44.32
-    Author     : anthraxite
+    Author     : salvatore spanu 65219
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -18,4 +18,7 @@
         <li id="mongol">Mongolfieristi</li>
         <li id="ritard">Ritardatari</li>
     </ul>
+    <c:if test="${empty param.user}">
+        <p id="logOutLink"><a href="Login?logout=1">Logout</a></p>
+    </c:if>
 </div>

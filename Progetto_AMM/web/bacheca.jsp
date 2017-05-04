@@ -64,7 +64,7 @@
                     </div>
                 </c:forEach>
                 
-                <div id="post1">
+                <!--<div id="post1">
                     <img title="Bill" alt="Foto Bill Gates" src="img/bill_gates.jpg" width="100"/>
                     <p id="nick1">Bill</p>
 
@@ -89,7 +89,7 @@
                         <p>Messaggio: Ciao, questo è un terzo messaggio lasciato in bacheca</p>
                     </div>  
                     <p id="allegato3"><a href="http://www.ubuntu.com">Io sono ciò che sono in virtù di ciò che siamo tutti</a></p>
-                </div>
+                </div>-->
 
             </div>  
         </div>

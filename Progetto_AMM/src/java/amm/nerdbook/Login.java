@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package amm.nerdbook;
-import amm.nerdbook.Classi.*;
+import amm.nerdbook.Classi.NerdFactory;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,51 +8,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author anthraxite
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 public class Login extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
         HttpSession session = request.getSession();
         
         if(request.getParameter("logout")!=null){
             session.invalidate();
-            request.getRequestDispatcher("loginForm.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
         }
-        
         if (session.getAttribute("loggedIn") != null && session.getAttribute("loggedIn").equals(true)){
-
             request.getRequestDispatcher("Bacheca").forward(request, response);
             return;
-        
         } else {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
             if (username != null && password != null){
                 int loggedUserID = NerdFactory.getInstance().getIdByUserAndPassword(username, password);
-                
                 if(loggedUserID!=-1) {
                     session.setAttribute("loggedIn", true);
                     session.setAttribute("loggedUserID", loggedUserID);
-                    
                     request.getRequestDispatcher("Bacheca").forward(request, response);
                     return;
                 } else { 
                     request.setAttribute("invalidData", true);
-                    request.getRequestDispatcher("loginForm.jsp").forward(request, response);
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
                     return;
                 }
             }
         }
-
-        request.getRequestDispatcher("loginForm.jsp").forward(request, response);
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

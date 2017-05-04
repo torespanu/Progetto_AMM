@@ -4,11 +4,9 @@
     Author     : salvatore spanu 65219
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    
     <head>
         <title>login</title>
         <meta charset="UTF-8">
@@ -29,7 +27,10 @@
             
             <div id="campi" class="formLogin">   
                 <div id="loginForm" >
-                    <form action="#" method="post">
+                    
+           
+                    
+                    <form action="Login" method="post">
                         <div id="campiLogin">
                             
                             <label for="username">Username</label><br />
@@ -40,6 +41,11 @@
                             
                             <button type="submit">Invia</button>
                         </div>
+                        
+                        <c:if test="${invalidData == true}">
+                            <div id="invalidDataWarning">I dati inseriti non sono corretti</div>
+                        </c:if>
+                            
                     </form>
                 </div>
             </div>
