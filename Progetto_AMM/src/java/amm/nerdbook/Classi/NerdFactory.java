@@ -5,7 +5,6 @@
  */
 package amm.nerdbook.Classi;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 
 
@@ -33,8 +32,8 @@ public class NerdFactory {
         nerd1.setNome("Steve");
         nerd1.setCognome("Jobs");
         nerd1.setUrlFotoProfilo("img/steve.jpg");
-        nerd1.setUsername("stevej");
-        nerd1.setPassword("123456");
+        nerd1.setUsername("steve");
+        nerd1.setPassword("123");
         nerd1.setFrasePresentazione("Ciao io sono Steve!");
         nerd1.setDataNascita("11/12/1955");    
         
@@ -44,8 +43,8 @@ public class NerdFactory {
         nerd2.setNome("Bill");
         nerd2.setCognome("Gates");
         nerd2.setUrlFotoProfilo("img/bill.jpg");
-        nerd2.setUsername("billg");
-        nerd2.setPassword("123456");
+        nerd2.setUsername("bill");
+        nerd2.setPassword("123");
         nerd2.setFrasePresentazione("Ciao io sono Bill!");
         nerd2.setDataNascita("01/02/1950"); 
         
@@ -55,8 +54,8 @@ public class NerdFactory {
         nerd2.setNome("Linus");
         nerd2.setCognome("Torvalds");
         nerd2.setUrlFotoProfilo("img/linus.jpg");
-        nerd2.setUsername("linust");
-        nerd2.setPassword("123456");
+        nerd2.setUsername("linus");
+        nerd2.setPassword("123");
         nerd2.setFrasePresentazione("Ciao io sono Linus!");
         nerd2.setDataNascita("07/03/1952"); 
 
@@ -64,6 +63,7 @@ public class NerdFactory {
         listaNerds.add(nerd2);
         listaNerds.add(nerd3);
     }
+    
     public Nerd getNerdById(int id) {
         for (Nerd nerd : this.listaNerds) {
             if (nerd.getId() == id) {
@@ -75,7 +75,7 @@ public class NerdFactory {
     
     public int getIdByUserAndPassword(String user, String password){
         for (Nerd nerd : this.listaNerds){
-            if(nerd.getNome().equals(user) && nerd.getPassword().equals(password)){
+            if(nerd.getUsername().equals(user) && nerd.getPassword().equals(password)){
                 return nerd.getId();
             }
         }

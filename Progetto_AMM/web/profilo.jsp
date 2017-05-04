@@ -1,7 +1,7 @@
 <%-- 
     Document   : profilo
     Created on : 1-mag-2017, 18.15.12
-    Author     : anthraxite
+    Author     : salvatore spanu 65219
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 

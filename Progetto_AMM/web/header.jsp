@@ -11,6 +11,6 @@
 
 <header>
     <div id="title">
-        Nerdbook - ${title}
+        Nerdbook
     </div>
 </header>

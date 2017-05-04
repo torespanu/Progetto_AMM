@@ -1,0 +1,333 @@
+/* 
+    Created on : 27-mar-2017, 10.18.06
+    Author     : Salvatore Spanu
+*/
+
+body{
+    background-color: #00E7FF;
+    font: 18px/25px "Open Sans", Arial, sans-serif;
+}
+
+h1{
+    color: #444444;
+    font: 25px/20px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h2{
+    font: 20px/20px "Open Sans", Arial, sans-serif;
+    color: #444444;
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h3{
+    color: #444444;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a:link{
+    font-size: 20px;
+    text-decoration: none;
+    color: #111111;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+a:visited{
+    text-decoration: none;
+    color: #111111;
+}
+
+div{
+    background-color: #ffffff;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,2);
+}
+
+.liste{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.liste img{
+    max-width: 60px;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
+nav a:link{
+    font-size: 20px;
+    color: #111111;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#campi *:focus{
+   outline: none;
+   border-color: black;
+   box-shadow: 0 0 5px black;
+}
+
+#campi textArea{
+    height: 60px;
+    width: 182px;
+    padding: 2px;
+}
+
+#campi input{
+    width: 180px;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+form button{
+    margin-top: 10px;
+    width: 188px;
+}
+
+header{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 8px;
+    width: 180px;
+    height: 30px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 180px;
+    width: 85%;
+    height: 30px;
+    font-size: 25px;
+}
+nav div, header div{
+    height: 100%;
+    list-style-type: none;
+}
+
+nav ul, nav li{
+    margin-top: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#page{
+    position: relative;
+    background: rgba(0,0,0,0);
+    top: 60px;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+#sidebar{
+    top: 55px;
+    left: 0;
+    float: left;
+    width: 25%;
+    padding-left: 40px;
+}
+
+#bacheca, #cont, #campi{
+    float:left;
+    width: 60%;
+}
+
+.campiForm img{
+    float: left;
+    margin-left: 10px;
+    max-width: 150px;
+    margin-right: 10px;
+    padding-top: 0px;
+}
+
+.campiForm img{
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 10px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,2);
+}
+
+.campiForm form{
+    padding-left: 180px;
+}
+
+.campiForm div{
+    min-width: 186px;
+}
+
+#campiLogin{
+    margin-left: 170px;
+}
+
+#campi.formLogin{
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#listaGruppi li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#loginForm div{
+    min-width: 185px;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 481px){
+    
+    header{
+        width: 100%;
+        z-index: 1;
+    }
+    
+    nav{
+        z-index: 1;
+        position: fixed;
+        top: 65px;
+        left: 8px;
+        width: 100%;
+        height: 60px;
+    }
+    
+    #sidebar{
+        margin-top: 102px;
+        left: 8px;
+        float: left;
+        width: 15%;
+        min-width: 118px; 
+        padding-left: 20px;
+    }
+    
+    #bacheca, #cont, #campi{
+        z-index: 0;
+        position: relative;
+        width: 53%;
+        top: 92px;
+        margin-left: 5px;
+    }
+    
+    .formLogin{
+        margin-top: 102px;
+        left: 8px;
+    }
+    
+    #listaGruppi li{
+        padding-left: 0;
+        background-image: none;
+    }
+    
+    .campiForm form{
+        padding-left: 0;
+        padding-top: 220px;
+    }
+    #campiLogin{
+        margin-left: 8px;
+        margin-top: 160px;
+    }
+    
+    nav a:link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+}
+
+@media only screen and (max-width: 480px){
+    
+    header{
+        width: 100%;
+        z-index: 1;
+    }
+    
+    #sidebar{
+        display: none;
+    }
+    
+    nav{
+        z-index: 0;
+        position: relative;
+        margin-left: 8px;
+        top: 4px;
+        left: 0px;
+        width: 100%;
+        height: 120px;
+    }
+    
+    nav ul, nav li{
+        display: block;
+    }
+    
+    #bacheca, #cont, #campi{
+        z-index: 0;
+        position: relative;
+        top: 28px;
+        margin-left: 10px;
+        width: 93%;
+    }
+    
+    #campiLogin{
+        margin-left: 8px;
+    }
+    
+    .campiForm img{
+        max-width: 150px;
+        margin-right: auto;
+        padding-top: 0px;
+    }
+    
+    .campiForm form{
+        padding-left: 0px;
+        padding-top: 220px;
+    }
+
+    
+}
+
+/* Con queste regole si inseriscono tramite css le immagini che non portano 
+informazione ma solo abbellimento estetico. Le immagini dei profili e degli allegati
+portano informazione mentre per esempio l'icona di login e quelle prima dei gruppi
+nel sidebar non sono indispensaabili e benchè diano maggiore chiarezza all'informazione
+che segue sono solo estetiche.*/
+
+#loginForm{
+    background-image: url('img/chiave.jpg');
+    background-size: 100px;
+    background-position: left 25px top 25px;
+    background-repeat: no-repeat;
+}
+
+#mongol{
+    background-image: url('img/mongolfiera.jpg');
+    background-size: 20px;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+#ritard{
+    background-image: url('img/sveglia.jpg');
+    background-size: 20px;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
