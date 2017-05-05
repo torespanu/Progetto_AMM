@@ -59,7 +59,6 @@
                             <img alt="Post con foto" src="${post.content}">
                         </c:if>
                         <c:if test="${post.postType == 'URL'}">
-                            <img alt="Post con link" src="${post.content}">
                         </c:if>
                     </div>
                 </c:forEach>
