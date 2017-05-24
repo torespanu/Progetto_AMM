@@ -33,20 +33,21 @@
             <div id="campi">
                 
                 <div class="campiForm">
-                        <img title="Linus" alt="Foto Linus Trovalds" src="img/linus.jpg"/>
+                    <p>Profilo di ${nerd.nome}</p>
+                        <img title="Linus" alt="Foto Linus Trovalds" src="${nerd.urlFotoProfilo}"/>
                         <form action="#" method="post">
                         <div>
                             <label for="nome">Nome</label><br />
-                            <input type="text" name="nome" id="nome" value="Linus"/><br />
+                            <input type="text" name="nome" id="nome" value="${nerd.nome}"/><br />
 
                             <label for="cognome">Cognome</label><br />
-                            <input type="text" name="cognome" id="cognome" value="Trovalds"/><br />
+                            <input type="text" name="cognome" id="cognome" value="${nerd.conome}"/><br />
 
                             <label for="immagine">Immagine</label><br />
                             <input type="url" name="immagine" id="immagine" value="http://prova.it"/><br />
 
                             <label for="frasePresentazione">Frase di presentazione</label><br />
-                            <textarea name="frasePresentazione" id="frasePresentazione"></textarea><br />
+                            <textarea name="frasePresentazione" id="frasePresentazione">Prova</textarea><br />
 
                             <label for="dataNascita">Data di nascita</label><br />
                             <input name="dataNascuta" id="dataNascita" type="date"/><br />

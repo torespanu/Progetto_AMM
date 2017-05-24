@@ -1,0 +1,37 @@
+Nerds: 
+nerd_id			integer Primary Key
+username 		string 256 unique
+nome			string 256
+cognome			string 256
+urlfotoprofilo		string 256
+frasepresentazione	string 1024
+datanascita		string 256
+password		string 256 not null
+email			string 256
+tipoutente              boolean (verifica se un utente è admin)
+
+Amicizie: 
+follower: 		integer Foreign Key  --> nerd.nerd_id ( molti a molti )
+followed:		integer Foreign Key  --> nerd.nerd_id ( molti a molti )
+follower e followed insieme sono la chiave primaria
+
+Posts: 
+post_id			integer Primary Key
+content			string 1024
+type			integer Foreign Key --> postType.postType_id ( uno a molti )
+author			integer Foreign Key --> nerds.nerd_id ( uno a molti )
+
+Posttype:               
+id_posttype		integer Primary Key
+nome			string
+
+Groups: 
+group_id                integer Primary Key
+creatore                integer Foreign Key --> nerds.nerd_id ( uno a molti )
+nome			string 256 unique
+urlimmagine             string 256
+
+Groups_relations: 
+gruppo: 		integer Foreign Key  --> groups.group_id ( molti a molti )
+utente:         	integer Foreign Key  --> nerd.nerd_id ( molti a molti )
+guppo e utente insieme sono la chiave primaria

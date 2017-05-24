@@ -1,10 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author salvatore spanu 65219
  */
 package amm.nerdbook;
-
+import java.util.logging.Level;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -13,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import amm.nerdbook.Classi.*;
-/**
- *
- * @author anthraxite
- */
+import java.util.logging.Logger;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet ( loadOnStartup = 0 )
 public class Bacheca extends HttpServlet {
 
     /**
@@ -28,42 +27,44 @@ public class Bacheca extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
+    private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-                response.setContentType("text/html;charset=UTF-8");
+        throws ServletException, IOException {
+            response.setContentType("text/html;charset=UTF-8");
+            HttpSession session = request.getSession(false);
         
-        HttpSession session = request.getSession(false);
-        
-        //se la sessione esiste ed esiste anche l'attributo loggedIn impostato a true
-        if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true)){
-            
-            String user = request.getParameter("user");
-            
-            int userID;
+            if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true)){
 
-            if(user != null){
-                userID = Integer.parseInt(user);
-            } else {
-                Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
-                userID = loggedUserID;
+                String user = request.getParameter("user");
+
+                int userID;
+
+                if(user != null){
+                    userID = Integer.parseInt(user);
+                } else {
+                    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+                    userID = loggedUserID;
+                }
+
+                Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
+                if(nerd != null){
+                    request.setAttribute("nerd", nerd);
+
+                    List<Post> posts = PostFactory.getInstance().getPostList(nerd);
+                    request.setAttribute("posts", posts);
+
+                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                } else {
+                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                }
             }
-
-            Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
-            if(nerd != null){
-                request.setAttribute("nerd", nerd);
-
-                List<Post> posts = PostFactory.getInstance().getPostList(nerd);
-                request.setAttribute("posts", posts);
-
-                request.getRequestDispatcher("bacheca.jsp").forward(request, response);
-            } else {
-                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            else{
+                request.getRequestDispatcher("Login").forward(request, response);
             }
         }
-        else{
-            request.getRequestDispatcher("Login").forward(request, response);
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -104,4 +105,15 @@ public class Bacheca extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    @Override
+       public void init(){
+           String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+           try {
+               Class.forName(JDBC_DRIVER);
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+           }
+            PostFactory.getInstance().setConnectionString(dbConnection);
+            NerdFactory.getInstance().setConnectionString(dbConnection);
+       }
 }

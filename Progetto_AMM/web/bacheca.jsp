@@ -33,7 +33,9 @@
             <jsp:include page="sidebar.jsp"/>
 
             <div id="bacheca">
-                <!--<div id="nuovoPost">
+                
+                <h2>Bacheca di ${nerd.nome}</h2>
+                <div id="nuovoPost">
                     <form action="#" method="post">
                         <label for="testo">Testo nuovo post</label>
                         <textarea name="testo" id="testo">Testo nuovo post</textarea><br />
@@ -47,18 +49,19 @@
                         <button type="submit">Invia dati</button>
 
                     </form>
-                </div>-->
-                <h2>Posts:</h2>
-                
+                </div>
                 <c:forEach var="post" items="${posts}">
                     <div class="post">
                         <c:if test="${post.postType == 'TEXT'}">
                             <p>${post.content}</p>
                         </c:if>
                         <c:if test="${post.postType == 'IMAGE'}">
+                            <p>${post.content}</p>
                             <img alt="Post con foto" src="${post.content}">
                         </c:if>
                         <c:if test="${post.postType == 'URL'}">
+                            <p>${post.content}</p>
+                            <p>${post.content}</p>
                         </c:if>
                     </div>
                 </c:forEach>

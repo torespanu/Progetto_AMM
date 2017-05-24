@@ -19,6 +19,8 @@ public class Nerd {
     private String password;
     private String frasePresentazione;
     private String dataNascita;
+    private String email;
+    private boolean tipoUtente;
     
     public Nerd() {
         id = 0;
@@ -141,6 +143,34 @@ public class Nerd {
      */
     public void setDataNascita(String dataNascita) {
         this.dataNascita = dataNascita;
+    }
+    
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the tipoUtente
+     */
+    public boolean isTipoUtente() {
+        return tipoUtente;
+    }
+
+    /**
+     * @param tipoUtente the tipoUtente to set
+     */
+    public void setTipoUtente(boolean tipoUtente) {
+        this.tipoUtente = tipoUtente;
     }
     
     @Override
