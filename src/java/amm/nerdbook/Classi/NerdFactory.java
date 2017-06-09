@@ -9,11 +9,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 
 
 public class NerdFactory {
-    String connectionString;
+    private String connectionString;
     
     private static NerdFactory singleton;
     
@@ -88,6 +89,82 @@ public class NerdFactory {
             e.printStackTrace();
         }
         return -1;
+    }
+    
+    public List getNerdsList() {
+        List<Nerd> listaNerds = new ArrayList<Nerd>();
+        
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "nerdbook", "nerdbook");
+            
+            String query = 
+                      "select * from nerds";
+            
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                Nerd current = new Nerd();
+                current.setId(res.getInt("nerd_id"));
+                current.setUsername(res.getString("username"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                current.setFrasePresentazione(res.getString("frasePresentazione"));
+                current.setDataNascita(res.getString("dataNascita"));
+                current.setPassword(res.getString("password"));
+                current.setEmail(res.getString("email"));
+                
+                listaNerds.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return listaNerds;
+    }
+    
+    public List getNerdsList(String name) {
+        List<Nerd> listaNerds = new ArrayList<Nerd>();
+        
+        try {
+            Connection conn = DriverManager.getConnection(connectionString, "nerdbook", "nerdbook");
+            
+            String query = 
+                      "select * from nerds where name like ?";
+            
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setString(1, "%" + name + "%");
+            
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                Nerd current = new Nerd();
+                current.setId(res.getInt("nerd_id"));
+                current.setUsername(res.getString("username"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                current.setFrasePresentazione(res.getString("frasePresentazione"));
+                current.setDataNascita(res.getString("dataNascita"));
+                current.setPassword(res.getString("password"));
+                current.setEmail(res.getString("email"));
+                
+                listaNerds.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return listaNerds;
     }
 }
 

@@ -1,29 +1,27 @@
-/**
- *
- * @author salvatore spanu 65219
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package amm.nerdbook;
+
 import amm.nerdbook.Classi.Nerd;
 import amm.nerdbook.Classi.NerdFactory;
-import amm.nerdbook.Classi.Post;
-import amm.nerdbook.Classi.PostFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author AnthraXite
+ * @author Salvatore Spanu
  */
-public class Profilo extends HttpServlet {
+@WebServlet(name = "Filter", urlPatterns = {"/Filter"})
+public class Filter extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,43 +32,26 @@ public class Profilo extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-
-    
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-                HttpSession session = request.getSession(false);
-            if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true)){
-
-                String user = request.getParameter("user");
-
-                int userID;
-
-                if(user != null){
-                    userID = Integer.parseInt(user);
-                } else {
-                    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
-                    userID = loggedUserID;
-                }
-
-                Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
-                if(nerd != null){
-                    request.setAttribute("nerd", nerd);
-
-                    List<Post> posts = PostFactory.getInstance().getPostList(nerd);
-                    request.setAttribute("posts", posts);
-
-                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
-                } else {
-                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                }
-            }
-            else{
-                request.getRequestDispatcher("Login").forward(request, response);
+        
+        
+         String command = request.getParameter("cmd");
+        if (command != null) 
+        {
+            if (command.equals("search")) 
+            {
+                List<Nerd> listaNerds = NerdFactory.getInstance().getNerdsList(request.getParameter("q"));
+                request.setAttribute("listaNerds", listaNerds);
+                response.setContentType("application/json");
+                response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
+                response.setHeader("Cache-Control", "no-store, no-cache, "
+                        + "must-revalidate");
+                request.getRequestDispatcher("filterJson.jsp").
+                        forward(request, response);
             }
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -111,6 +92,5 @@ public class Profilo extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 
 }

@@ -8,10 +8,16 @@
 <!DOCTYPE html>
 <div id="sidebar">
     <h3>Amici</h3>
+    <p id="searchNerd">
+                <input id="searchField" type="text" placeholder="Cerca Nerd" value="">
+                <button id="searchNerd">Cerca</button>
+    </p>
     <ul id="listaAmici" class="liste">
-        <li><img title="Bill" alt="Foto Bill Gates" src="img/bill_gates.jpg"/>Bill</li>
-        <li><img title="Steve" alt="Foto Steve Jobs" src="img/steve_jobs.jpg"/>Steve</li>
-        <li><img title="Linus" alt="Foto Linus Trovalds" src="img/linus.jpg"/>Linus</li>
+       
+        <c:forEach var="nerd" items="${listaNerds}">
+            <li class="user"><a href="Bacheca?user=${nerd.nerd_id}"><img src="${nerd.urlFotoProfilo}" alt="Foto Nerd">${nerd.nome} ${nerd.cognome}</a></li>
+        </c:forEach> 
+
     </ul>
     <h3>Gruppi</h3>
     <ul id="listaGruppi" class="liste">

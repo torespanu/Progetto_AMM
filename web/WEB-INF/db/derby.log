@@ -1,4 +1,20 @@
-Thu May 25 14:46:42 CEST 2017 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
+Fri Jun 09 21:17:40 CEST 2017 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
 ----------------------------------------------------------------
-Thu May 25 15:15:08 CEST 2017: arresto in corso del motore di Derby
+Fri Jun 09 21:19:01 CEST 2017:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-015c-8e4a-69e3-000068d42186
+sulla directory di database /home/anthraxite/Dropbox/INFORMATICA/AMM/LAB/Progetto_AMM/web/WEB-INF/db/ammdb con caricatore classi sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Caricato da file:/usr/lib/jvm/java-8-oracle/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=/usr/lib/jvm/java-8-oracle/db
+os.name=Linux
+os.arch=amd64
+os.version=4.10.0-22-generic
+derby.system.home=/home/anthraxite/Dropbox/INFORMATICA/AMM/LAB/Progetto_AMM/web/WEB-INF/db
+Programma di caricamento classe database avviato - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Jun 09 21:19:53 CEST 2017: arresto in corso del motore di Derby
+----------------------------------------------------------------
+Fri Jun 09 21:19:53 CEST 2017:
+Arresto dell'istanza a816c00e-015c-8e4a-69e3-000068d42186 nella directory del database /home/anthraxite/Dropbox/INFORMATICA/AMM/LAB/Progetto_AMM/web/WEB-INF/db/ammdb con il caricatore di classi sun.misc.Launcher$AppClassLoader@6f94fa3e 
 ----------------------------------------------------------------
